@@ -359,18 +359,18 @@ if (selection == 'Lung Cancer Prediction'):
     
     # creating a button for Prediction
     
-    if st.button('Heart Disease Test Result'):
+    if st.button('Lung Disease Test Result'):
         heart_prediction = cancer_model.predict([[Age, Gender, AirPollution, Alcoholuse, BalancedDiet, Obesity, Smoking, PassiveSmoker, Fatigue, WeightLoss,ShortnessofBreath, Wheezing, SwallowingDifficulty,ClubbingofFingerNails, FrequentCold, DryCough, Snoring]])                          
         
         if (heart_prediction[0] == 'High'):
-          heart_diagnosis = 'The person is having heart disease'
+          heart_diagnosis = 'The person is having lung cancer'
           st.error(heart_diagnosis)
 
         elif(heart_prediction[0] == 'Medium'):
-          heart_diagnosis = 'The person is chance of having heart disease'
+          heart_diagnosis = 'The person is chance of having lung cancer'
           st.warning(heart_diagnosis)
         else:
-          heart_diagnosis = 'The person does not have any heart disease'
+          heart_diagnosis = 'The person does not have any lung disease'
           st.balloons()
           st.success(heart_diagnosis)
         
